@@ -1,0 +1,32 @@
+<% if notice %>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <%= notice %>
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col-3">
+    <%= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
+  </div>
+
+  <div class="col-9">
+    <p>
+      <strong>Name:</strong>
+      <%= @idea.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @idea.description %>
+    </p>
+  </div>
+
+
+</div>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>

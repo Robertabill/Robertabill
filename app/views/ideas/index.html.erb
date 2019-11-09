@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Brillaint People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="more-space">Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td class="more-space"><%= idea.name %></td>
+        <td><%= idea.description %></td>
+        <td><%= idea.picture %></td>
+        <td><%= link_to 'Show', idea,class:"btn btn-light" %></td>
+        <td><%= link_to 'Edit', edit_idea_path(idea),class:"btn btn-light" %></td>
+        <td><%= link_to 'Destroy', idea,class:"btn btn-light" ,method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Person', new_idea_path, class:"btn btn-light" %><br>
+
+<%= image_tag('https://i.giphy.com/media/d31w24psGYeekCZy/giphy.gif', width: '50%') %>
